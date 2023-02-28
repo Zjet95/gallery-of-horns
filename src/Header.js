@@ -8,10 +8,10 @@ class Header extends React.Component {
   render() {
     return (
       <>
-        <h1>
-          <title>Hello My Name is {`${fName} ${lName}`}!</title>
-        </h1>
-        </>
+        <header>
+          <h1>Hello My Name is {`${fName} ${lName}`}!</h1>
+        </header>
+      </>
     );
   }
 };
