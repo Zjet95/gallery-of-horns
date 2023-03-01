@@ -6,15 +6,6 @@ class Main extends React.Component {
 
   render() {
 
-    // console.log(this.props.name);
-    // let people = [];
-    // this.props.data.forEach((pep) => {
-    //   people.push(
-    //     <Person 
-    //     name={pep.name}
-    //     imageURL={pep.image.props}
-    //   )
-    // }
     return (
       <>
         <h2>Animal Type</h2>
@@ -31,13 +22,22 @@ class Main extends React.Component {
           image_url={""}
           description={"Here we display the rare white horned Rhino"}
         />
-        </>
+      </>
 
 
-        )
+    )
   }
 }
 
-        export default Main;
+export default Main;
 
 
+   // console.log(this.props.name);
+    // let people = [];
+    // this.props.data.forEach((pep) => {
+    //   people.push(
+    //     <Person 
+    //     name={pep.name}
+    //     imageURL={pep.image.props}
+    //   )
+    // }

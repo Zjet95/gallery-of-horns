@@ -1,10 +1,10 @@
 import React from 'react';
 //CSS you must specify file type due to we arent in a CSS file so it doesnt assume the file type
-// import './App.css';
+import './App.css';
 //JS you dont have to reference theh file type. 
 import Header from './Header';
 import Main from './Main';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 //must have import react
 //must have export 
@@ -14,9 +14,10 @@ class App extends React.Component {
   render(){
     return(
       <>
+      <h1>Testing we cant go live here!</h1>
       <Header/>
       <Main/>
-      <Footer/>
+      {/* <Footer/> */}
       </>
    )
   }

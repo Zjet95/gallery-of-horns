@@ -9,7 +9,7 @@ class Header extends React.Component {
     return (
       <>
         <header>
-          <h1>Hello My Name is {`${fName} ${lName}`}!</h1>
+          <h1>Hello My Name is {fName} {lName}!</h1>
         </header>
       </>
     );
@@ -17,4 +17,6 @@ class Header extends React.Component {
 };
 
 export default Header;
+
+// To kill a port thats currently open displaying a react app use npx kill-port (Whatever port)
 

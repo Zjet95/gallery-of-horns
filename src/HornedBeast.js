@@ -3,13 +3,13 @@ import React from 'react';
 // import data from './data.json';
 
 class HornedBeast extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-// waves: 0
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  // waves: 0
   //   };
   // }
-  
+
   // handleWaves = ( => {
   //   this.setState({
   //     //must use set state to update a value in state, you cant bypass and update the value directly. 
@@ -19,15 +19,15 @@ class HornedBeast extends React.Component {
   render() {
     return (
       <>
-          <h2>{this.props.name}</h2>
+        <h2>{this.props.name}</h2>
         <img
-        src={'this.props.imageURL'}
-        alt={'this.props.alt'} 
-        title={'this.props.title'}
-/>
-<p>{this.props.description}</p>
-        </>
-        
+          src={'this.props.imageURL'}
+          alt={'this.props.alt'}
+          title={'this.props.title'}
+        />
+        <p>{this.props.description}</p>
+      </>
+
     );
   }
 };
