@@ -1,26 +1,34 @@
 import React from 'react';
 import HornedBeast from './HornedBeast';
+import './Main.css'
 
 
 class Main extends React.Component {
 
   render() {
 
+    let hornedBeast = [];
+    this.props.data..forEach((pep)=> {
+      hornedBeast.push (
+        <
+
+      )
+    });
     return (
       <>
         <h2>Animal Type</h2>
 
         <HornedBeast
 
-          title={"Family Of Rhinos"}
-          image_url={""}
-          description={"Here we display the rare white horned Rhino"}
+          title={"this.props.title"}
+          image_url={"this.props.imgURL"}
+          description={"this.props.description"}
         />
         <HornedBeast
 
-          title={"Family Of Rhinos"}
-          image_url={""}
-          description={"Here we display the rare white horned Rhino"}
+          title={"this.props.title"}
+          image_url={"this.props.imgURL"}
+          description={"this.props.description"}
         />
       </>
 

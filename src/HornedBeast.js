@@ -1,21 +1,25 @@
 import React from 'react';
-// import Main from 'main';
-// import data from './data.json';
+import Main from 'main';
+import data from './data.json';
 
 class HornedBeast extends React.Component {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = {
-  // waves: 0
-  //   };
-  // }
+    constructor(props) {
+      super(props);
+      this.state = {
+  waves: 0,
+  learnAboutme: false
+    };
+  }
 
-  // handleWaves = ( => {
-  //   this.setState({
-  //     //must use set state to update a value in state, you cant bypass and update the value directly. 
-  //     waves: this.state.waves + 1,
-  //   })
-  // })
+  handleWaves = () => {
+    // when the user clicks on "Say Hello" update the value of this.state.waves
+    this.setState({
+      //must use set state to update a value in state, you cant bypass and update the value directly. 
+      waves: this.state.waves + 1,
+    });
+  }
+
+
   render() {
     return (
       <>

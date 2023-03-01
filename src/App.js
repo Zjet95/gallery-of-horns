@@ -4,6 +4,7 @@ import './App.css';
 //JS you dont have to reference theh file type. 
 import Header from './Header';
 import Main from './Main';
+import Data from './data.json'
 // import Footer from './Footer';
 
 //must have import react
@@ -16,8 +17,8 @@ class App extends React.Component {
       <>
       <h1>Testing we cant go live here!</h1>
       <Header/>
-      <Main/>
-      {/* <Footer/> */}
+      <Main data={data}/>
+      <Footer/>
       </>
    )
   }
