@@ -6,9 +6,9 @@ const lName = 'Jeter';
 class Footer extends React.Component {
   render() {
     return (
-
+      <>
 <Footer>&copy; {`${fName} ${lName}`} </Footer>
-
+</>
     );
   }
 }
