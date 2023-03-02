@@ -13,6 +13,8 @@ const lName = 'Jeter';
 //must have import react
 //must have export 
 //declares class 
+
+//creating to push changes to github 
 class App extends React.Component {
   // constructor(props) {
   //   super(props)
