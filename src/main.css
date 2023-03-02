@@ -1,0 +1,26 @@
+.beast img{
+  background-color: bisque;
+  font-size: 20px;
+  max-height: 18rem;
+  max-width: 18rem;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.card {
+  margin: 1rem;
+}
+
+.beast{
+  min-width: 23rem;
+  min-height: 30rem;
+}
+
+
+
+

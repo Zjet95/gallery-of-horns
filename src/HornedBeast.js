@@ -1,39 +1,53 @@
 import React from 'react';
-import Main from 'main';
-import data from './data.json';
+import Card from 'react-bootstrap/Card';
+import './HornedBeast.css'
+import './main.css'
+// import Main from 'main';
+// import data from './data.json';
 
 class HornedBeast extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-  waves: 0,
-  learnAboutme: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      favorite: 0,
+      // learnAboutme: false
     };
   }
 
-  handleWaves = () => {
+  handleFavorite = () => {
     // when the user clicks on "Say Hello" update the value of this.state.waves
     this.setState({
       //must use set state to update a value in state, you cant bypass and update the value directly. 
-      waves: this.state.waves + 1,
+      favorite: this.state.favorite + 1,
     });
   }
+
+  // favorited = () => {
+  //   this.setState({
+  //     addHeart: true
+  //   });
+
+  // }
 
 
   render() {
     return (
-      <>
-        <h2>{this.props.name}</h2>
-        <img
-          src={'this.props.imageURL'}
-          alt={'this.props.alt'}
-          title={'this.props.title'}
-        />
-        <p>{this.props.description}</p>
-      </>
-
+      <Card>
+        <article className="beast">
+          <h3>{this.props.name}</h3>
+          <p>{this.state.favorite} greetings</p>
+          <p onClick={this.handleFavorite}>Say What's Up!</p>
+          <img
+            src={this.props.imagURL}
+            alt={this.props.alt}
+            onClick={this.props.addHeart}
+          ></img>
+        </article >
+      </Card>
     );
   }
-};
+}
 
 export default HornedBeast;
+
+//know where you parent and children elements are.
