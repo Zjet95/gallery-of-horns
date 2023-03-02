@@ -1,15 +1,12 @@
 import React from 'react';
 
-const fName = "Zach";
-const lName = 'Jeter';
-
 
 class Header extends React.Component {
   render() {
     return (
       <>
         <header>
-          <h1>Hello My Name is {fName} {lName}!</h1>
+          <h1>Hello My Name is {this.props.fName} {this.props.lName}! This is The Gallery Of Horns Project</h1>
         </header>
       </>
     );
