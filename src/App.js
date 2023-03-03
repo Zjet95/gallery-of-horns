@@ -6,6 +6,7 @@ import Main from './Main';
 import data from './data.json'
 import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Modal from 'react-bootstrap/Modal';
 import './App.css';
 
 const fName = 'Zach';
@@ -13,33 +14,34 @@ const lName = 'Jeter';
 //must have import react
 //must have export 
 //declares class 
+
+//creating to push changes to github 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     hearts: ''
-  //   }
-  //   addHearts = () => {
-  //     //only way we can update state is to use this method
-  //     this.setState({
-  //       hearts: this.state.hearts + ''
-  //     })
-  //   }
+  constructor(props) {
+    super(props)
+    this.state = {
+      showModal: false,
+      beastName: '',
+      beastImgURL: '',
+      beastDescription: ''
+    };
+  }
 
-  //   handleCloseModal = (name) => {
-  //     this.setState({
-  //       showModal: false
-  //       personName: name
-  //     })
+  handleCloseModal = (name) => {
+    this.setState({
+      showModal: false,
+      beastName: name
+    });
+  }
 
-  //     handleOpenModal = () => {
-  //       this.setState()
-  //     });
-  //   }
-
-  //   handleHeaderClick = () => {
-  //     this.props.handleOpenModal(this.props.name)
-  //   }
+  handleOpenModal = (name, imagURL, description) => {
+    this.setState({
+      showModal: true,
+      beastName: name,
+      beastImgURL: imagURL,
+      beastDescription: description
+    });
+  }
 
   render() {
     return (
@@ -48,19 +50,28 @@ class App extends React.Component {
           fName={fName}
           lName={lName}
         />
-        <Main data={data} />
+        <Main data={data} handleOpenModal={this.handleOpenModal} />
 
         <Footer
           fName={fName}
           lName={lName}
         />
-        {/* <Modal show={this.state.showModal}>
-          //   <Modal.Header>
-          //     <Modal.Title></Modal.Title>
-          //   </Modal.Header>
-          // </Modal> */}
+        <Modal
+          show={this.state.showModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              {this.state.beastName}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img src={this.state.beastImgURL} alt={this.state.beastName} />
+          </Modal.Body>
+          <Modal.Footer>
+            {this.state.beastDescription}
+          </Modal.Footer>
+        </Modal>
       </>
-    )
+    );
   }
 }
 

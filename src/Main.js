@@ -6,30 +6,24 @@ class Main extends React.Component {
 
   render() {
 
-    let hornedBeast = [];
-    this.props.data.forEach((beast) => {
-      hornedBeast.push(
-        <HornedBeast
-          name={beast.title}
-          imagURL={beast.image_url}
-          keyword={beast.keyword}
-          description={beast.description}
-          // addHeart={this.props.addHeart}
-          // handleOpenModal={this.props.handleOpenModal}
+    let hornedBeast = this.props.data.map((beast) => {
+      return(
+      <HornedBeast
+        name={beast.title}
+        imagURL={beast.image_url}
+        keyword={beast.keyword}
+        description={beast.description}
+        handleOpenModal={this.props.handleOpenModal}
+        key={beast._id}
+      />)
 
-          key={beast._id}
-        />
+  });
+return(
 
-      )
-    })
-
-    return (
-      <>
-
-
-      <main>
-{hornedBeast}
-      </main>
+<>
+  <main>
+    {hornedBeast}
+  </main>
       
       </>
     )

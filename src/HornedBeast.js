@@ -22,12 +22,10 @@ class HornedBeast extends React.Component {
     });
   }
 
-  // favorited = () => {
-  //   this.setState({
-  //     addHeart: true
-  //   });
-
-  // }
+ handleHeaderClick = () => {
+  this.addHeart()
+  this.props.handleOpenModal(this.props.name, this.props.imagURL, this.props.description);
+ }
 
 
   render() {
