@@ -3,3 +3,8 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.btn btn-primary{
+  text-align: center;
+  padding-bottom: 5%;
+}
