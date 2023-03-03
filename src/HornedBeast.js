@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './HornedBeast.css'
 import './main.css'
+import Button from 'react-bootstrap/Button';
 // import Main from 'main';
 // import data from './data.json';
 
@@ -22,26 +23,31 @@ class HornedBeast extends React.Component {
     });
   }
 
- handleHeaderClick = () => {
-  this.addHeart()
-  this.props.handleOpenModal(this.props.name, this.props.imagURL, this.props.description);
- }
+  handleHeaderClick = () => {
+    this.addHeart()
+    this.props.handleOpenModal(this.props.name, this.props.imagURL, this.props.description);
+  }
 
 
   render() {
     return (
+      <div>
       <Card>
-        <article className="beast">
-          <h3>{this.props.name}</h3>
-          <p>{this.state.favorite} greetings</p>
-          <p onClick={this.handleFavorite}>Say What's Up!</p>
-          <img
-            src={this.props.imagURL}
-            alt={this.props.alt}
-            onClick={this.props.addHeart}
-          ></img>
-        </article >
+        
+          <article className="beast">
+            <h3>{this.props.name}</h3>
+            <p>{this.state.favorite} greetings</p>
+            <div>
+            <Button><p onClick={this.handleFavorite}>Say What's Up!</p></Button>
+            </div>
+        <img
+          src={this.props.imagURL}
+          alt={this.props.alt}
+          onClick={this.props.addHeart}
+        ></img>
+      </article>
       </Card>
+      </div>
     );
   }
 }

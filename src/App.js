@@ -7,6 +7,7 @@ import data from './data.json'
 import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
+import { Form } from 'react-bootstrap'
 import './App.css';
 
 const fName = 'Zach';
@@ -43,14 +44,56 @@ class App extends React.Component {
     });
   }
 
+  handleSelect = (event) => {
+    let selected = event.target.value;
+    if (selected === '1') {
+      let newData = data.filter(num => num.horns === 1);
+      this.setState({
+        sortedData: newData
+      });
+    } else if (selected === '2') {
+      let newData = data.filter(num => num.horns === 2);
+      this.setState({
+        sortedData: newData
+      });
+    } else if (selected === '3') {
+      let newData = data.filter(num => num.horns === 3);
+      this.setState({
+        sortedData: newData
+      });
+    } else if (selected === '100') {
+      let newData = data.filter(num => num.horns === 100);
+      this.setState({
+        sortedData: newData
+      });
+    } else if (selected === 'all') {
+      this.setState({
+        sortedData: data
+      });
+    }
+  }
+
+
+
   render() {
     return (
       <>
-        <Header
-          fName={fName}
-          lName={lName}
-        />
-        <Main data={data} handleOpenModal={this.handleOpenModal} />
+        <Header />
+        <Form>
+          <Form.Group>
+            <Form.Select name="selected" onChange={this.handleSelect}>
+              <option>Open this select menu</option>
+              <option value="all">All</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="100">100</option>
+            </Form.Select>
+          </Form.Group>
+        </Form>
+
+
+        <Main data={this.sort.sortedData} handleOpenModal={this.handleOpenModal} />
 
         <Footer
           fName={fName}
