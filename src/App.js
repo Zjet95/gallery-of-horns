@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import { Form } from 'react-bootstrap'
 import './App.css';
+import HornedBeast from './HornedBeast';
 
 const fName = 'Zach';
 const lName = 'Jeter';
@@ -24,14 +25,13 @@ class App extends React.Component {
       showModal: false,
       beastName: '',
       beastImgURL: '',
-      beastDescription: ''
-    };
+      beastDescription: '',
+      sortedData: data
   }
-
+  }
   handleCloseModal = (name) => {
     this.setState({
       showModal: false,
-      beastName: name
     });
   }
 
@@ -93,7 +93,16 @@ class App extends React.Component {
         </Form>
 
 
-        <Main data={this.sort.sortedData} handleOpenModal={this.handleOpenModal} />
+        <Main data={this.state.sortedData} handleOpenModal={this.handleOpenModal} />
+
+        <HornedBeast
+          data={data}
+          showModal={this.state.showModal}
+          handleCloseModal={this.handleCloseModal}
+          title={this.state.title}
+          image_url={this.state.image_url}
+          description={this.state.description}
+        />
 
         <Footer
           fName={fName}

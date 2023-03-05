@@ -6,8 +6,14 @@ class Main extends React.Component {
 
   render() {
 
-    let hornedBeast = this.props.data.map((beast) => {
-      return(
+    // let hornedBeast = this.props.data.map((beast) => {
+      return (
+        <>
+
+        <main>
+
+          {this.props.data.map((beast) => {
+            return (
       <HornedBeast
         name={beast.title}
         imagURL={beast.image_url}
@@ -15,31 +21,19 @@ class Main extends React.Component {
         description={beast.description}
         handleOpenModal={this.props.handleOpenModal}
         key={beast._id}
-      />)
-
-  });
-return(
-
-<>
-  <main>
-    {hornedBeast}
+      />
+)})}
   </main>
-      
-      </>
-    )
-  };
-}
-//     return (
-//       <>
-//         <h2>Animal Type</h2>
+  </>
+      )
+    }
+  }
 
-//         <HornedBeast
-
-//           title={"this.props.title"}
+{/* //           title={"this.props.title"}
 //           image_url={"this.props.imgURL"}
 //           description={"this.props.description"}
 //         />
-//         <HornedBeast
+//         <HornedBeast */}
 
 //           title={"this.props.title"}
 //           image_url={"this.props.imgURL"}
